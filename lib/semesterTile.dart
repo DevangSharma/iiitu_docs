@@ -12,7 +12,11 @@ class SemesterTile extends StatelessWidget {
       child: Card(
         elevation: 5,
         child: ListTile(
-          title: Text("$semester Semester"),
+          title: Text(
+            "$semester Semester",
+            style:
+                TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),
+          ),
           trailing: Icon(Icons.chevron_right_sharp),
         ),
       ),

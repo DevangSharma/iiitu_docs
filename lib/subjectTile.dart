@@ -16,24 +16,27 @@ class SubjectTile extends StatelessWidget {
             .push(MaterialPageRoute(builder: (context) => SubjectPage(branch))),
         child: Card(
           elevation: 8,
-          child: Row(
-            children: [
-              Icon(
-                icon,
-                size: 104,
-                color: Colors.grey[800],
-              ),
-              Container(
-                width: 24,
-              ),
-              Text(
-                branch,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 56,
-                    color: Colors.grey[800]),
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+              children: [
+                Icon(
+                  icon,
+                  size: 104,
+                  color: Colors.grey[800],
+                ),
+                Container(
+                  width: 24,
+                ),
+                Text(
+                  branch,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 56,
+                      color: Colors.grey[800]),
+                )
+              ],
+            ),
           ),
         ),
       ),

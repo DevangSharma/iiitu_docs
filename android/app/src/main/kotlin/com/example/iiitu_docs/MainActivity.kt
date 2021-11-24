@@ -1,4 +1,4 @@
-package com.example.iiitu_docs
+package com.example.iiitudocs
 
 import io.flutter.embedding.android.FlutterActivity
 
