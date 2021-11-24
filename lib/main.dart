@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iiitu_docs/subjectTile.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,9 +24,9 @@ class _MyAppState extends State<MyApp> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Hello"),
-              Text("Hello"),
-              Text("Hello"),
+              SubjectTile(Icons.computer_rounded, "CSE"),
+              SubjectTile(Icons.laptop_mac_rounded, "IT"),
+              SubjectTile(Icons.electrical_services_sharp, "ECE")
             ],
           ),
         ),
