@@ -16,7 +16,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("IIITU Docs"),
+          title: Text(
+            "IIITU Docs",
+            style: TextStyle(fontSize: 28),
+          ),
           centerTitle: true,
         ),
         body: Center(
