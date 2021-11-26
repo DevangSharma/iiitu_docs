@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:iiitu_docs/semesterPage.dart';
 
 class SemesterTile extends StatelessWidget {
   String semester;
+  String branch;
 
-  SemesterTile(this.semester);
+  SemesterTile(this.branch, this.semester);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +14,8 @@ class SemesterTile extends StatelessWidget {
       child: Card(
         elevation: 5,
         child: ListTile(
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => SemesterPage(branch, semester))),
           title: Text(
             "$semester Semester",
             style:
