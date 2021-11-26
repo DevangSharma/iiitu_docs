@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1031566985769",
+    "project_id": "iiitu-docs",
+    "storage_bucket": "iiitu-docs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031566985769:android:50ecd39f30c9ba16f62a38",
+        "android_client_info": {
+          "package_name": "com.example.iiitudocs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031566985769-bfdet0h9cm3cr1treieevtba23jmio1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2gFR7qxaeMVtMAoJy7BVRhJjEfriuG-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031566985769-bfdet0h9cm3cr1treieevtba23jmio1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
