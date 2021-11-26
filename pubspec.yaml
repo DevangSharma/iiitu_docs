@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_storage: 
   firebase_core:
+  syncfusion_flutter_pdfviewer: 
 
 dev_dependencies:
   flutter_test:

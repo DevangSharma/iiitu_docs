@@ -1,12 +1,15 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:iiitu_docs/pdfView.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class YearTile extends StatelessWidget {
+  String heading;
   String title;
   int id;
   String path;
 
-  YearTile(this.id, this.title, this.path);
+  YearTile(this.id, this.title, this.path, this.heading);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,10 @@ class YearTile extends StatelessWidget {
                 .child(path)
                 .getDownloadURL();
 
-            print(url);
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => PDFView(heading + " " + title, url)));
+
+            SfPdfViewer.network(url);
           },
           leading: Text(
             "$id",

@@ -46,9 +46,11 @@ class _SemesterPageState extends State<SemesterPage> {
                       child: ListView.builder(
                         itemCount: snapshot.data!.items.length,
                         itemBuilder: (context, index) => YearTile(
-                            index + 1,
-                            snapshot.data!.items[index].name,
-                            snapshot.data!.items[index].fullPath),
+                          index + 1,
+                          snapshot.data!.items[index].name,
+                          snapshot.data!.items[index].fullPath,
+                          widget.branch + " " + widget.semester + " Semester ",
+                        ),
                       ),
                     );
             } else {
