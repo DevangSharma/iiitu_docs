@@ -1,17 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-
-listExample() async {
-  ListResult result = await FirebaseStorage.instance.ref().listAll();
-
-  result.items.forEach((ref) {
-    print('Found file: $ref');
-  });
-
-  result.prefixes.forEach((ref) {
-    print('Found directory: $ref');
-  });
-}
 
 class SemesterPage extends StatefulWidget {
   String branch;
@@ -24,14 +14,6 @@ class SemesterPage extends StatefulWidget {
 
 class _SemesterPageState extends State<SemesterPage> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    listExample();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -41,17 +23,31 @@ class _SemesterPageState extends State<SemesterPage> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Available"),
-            ],
-          ),
-        ),
-      ),
+      body: FutureBuilder(
+          future: FirebaseStorage.instance
+              .ref()
+              .child(widget.branch)
+              .child(widget.semester)
+              .listAll(),
+          builder: (context, AsyncSnapshot<ListResult> snapshot) {
+            // ListResult data = snapshot.data;
+
+            if (snapshot.hasData) {
+              return (snapshot.data!.items.isEmpty)
+                  ? Center(
+                      child: Text(
+                        "No data available",
+                        style: TextStyle(fontSize: 18, color: Colors.grey[800]),
+                      ),
+                    )
+                  : ListView.builder(
+                      itemCount: snapshot.data!.items.length,
+                      itemBuilder: (context, index) =>
+                          Text("${snapshot.data!.items[index].name}"));
+            } else {
+              return CircularProgressIndicator();
+            }
+          }),
     );
   }
 }
