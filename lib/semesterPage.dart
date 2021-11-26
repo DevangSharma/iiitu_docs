@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:iiitu_docs/yearTile.dart';
 
 class SemesterPage extends StatefulWidget {
   String branch;
@@ -18,8 +19,8 @@ class _SemesterPageState extends State<SemesterPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.branch,
-          style: TextStyle(fontSize: 28),
+          "${widget.branch} ${widget.semester} Semester",
+          style: TextStyle(fontSize: 24),
         ),
         centerTitle: true,
       ),
@@ -40,10 +41,16 @@ class _SemesterPageState extends State<SemesterPage> {
                         style: TextStyle(fontSize: 18, color: Colors.grey[800]),
                       ),
                     )
-                  : ListView.builder(
-                      itemCount: snapshot.data!.items.length,
-                      itemBuilder: (context, index) =>
-                          Text("${snapshot.data!.items[index].name}"));
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 18),
+                      child: ListView.builder(
+                        itemCount: snapshot.data!.items.length,
+                        itemBuilder: (context, index) => YearTile(
+                            index + 1,
+                            snapshot.data!.items[index].name,
+                            snapshot.data!.items[index].fullPath),
+                      ),
+                    );
             } else {
               return CircularProgressIndicator();
             }

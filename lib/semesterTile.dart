@@ -16,6 +16,7 @@ class SemesterTile extends StatelessWidget {
         child: ListTile(
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => SemesterPage(branch, semester))),
+          leading: Icon(Icons.pending_actions_outlined),
           title: Text(
             "$semester Semester",
             style:

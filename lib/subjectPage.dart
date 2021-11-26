@@ -15,11 +15,11 @@ class SubjectPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 18),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SemesterTile(branch, "1st"),
               SemesterTile(branch, "2nd"),
