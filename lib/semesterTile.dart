@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iiitu_docs/semesterPage.dart';
 
 class SemesterTile extends StatelessWidget {
-  String semester;
-  String branch;
+  final String semester, branch;
 
   SemesterTile(this.branch, this.semester);
 
@@ -19,8 +18,7 @@ class SemesterTile extends StatelessWidget {
           leading: Icon(Icons.pending_actions_outlined),
           title: Text(
             "$semester Semester",
-            style:
-                TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           trailing: Icon(Icons.chevron_right_sharp),
         ),

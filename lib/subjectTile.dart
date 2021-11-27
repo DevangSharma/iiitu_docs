@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iiitu_docs/subjectPage.dart';
 
 class SubjectTile extends StatelessWidget {
-  IconData icon;
-  String branch;
+  final IconData icon;
+  final String branch;
 
   SubjectTile(this.icon, this.branch);
 
@@ -22,8 +22,8 @@ class SubjectTile extends StatelessWidget {
               children: [
                 Icon(
                   icon,
-                  size: 104,
-                  color: Colors.grey[800],
+                  size: 64,
+                  color: Colors.white,
                 ),
                 Container(
                   width: 24,
@@ -32,8 +32,8 @@ class SubjectTile extends StatelessWidget {
                   branch,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 56,
-                      color: Colors.grey[800]),
+                      fontSize: 32,
+                      color: Colors.white),
                 )
               ],
             ),

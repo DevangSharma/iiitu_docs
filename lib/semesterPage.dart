@@ -1,12 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:iiitu_docs/yearTile.dart';
 
 class SemesterPage extends StatefulWidget {
-  String branch;
-  String semester;
+  final String branch, semester;
   SemesterPage(this.branch, this.semester);
 
   @override
@@ -38,7 +35,7 @@ class _SemesterPageState extends State<SemesterPage> {
                   ? Center(
                       child: Text(
                         "No data available",
-                        style: TextStyle(fontSize: 18, color: Colors.grey[800]),
+                        style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     )
                   : Padding(
@@ -54,7 +51,10 @@ class _SemesterPageState extends State<SemesterPage> {
                       ),
                     );
             } else {
-              return CircularProgressIndicator();
+              return Center(
+                  child: CircularProgressIndicator(
+                color: Color(0xff94753c),
+              ));
             }
           }),
     );

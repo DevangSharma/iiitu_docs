@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iiitu_docs/semesterTile.dart';
 
 class SubjectPage extends StatelessWidget {
-  String branch;
+  final String branch;
 
   SubjectPage(this.branch);
   @override

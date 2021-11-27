@@ -21,19 +21,42 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.dark(),
+        appBarTheme: AppBarTheme(backgroundColor: Color(0xff94753c)),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text(
             "IIITU Docs",
-            style: TextStyle(fontSize: 28),
+            style: TextStyle(fontSize: 24),
           ),
           centerTitle: true,
         ),
         body: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.all(32),
+                child: Image(
+                  image: AssetImage("assets/iiitulogo.png"),
+                  height: 200,
+                ),
+              ),
+              Text(
+                "Portal for previous papers",
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+              ),
+              Container(
+                height: 12,
+              ),
+              Divider(
+                thickness: 2,
+              ),
               SubjectTile(Icons.computer_rounded, "CSE"),
               SubjectTile(Icons.laptop_mac_rounded, "IT"),
               SubjectTile(Icons.electrical_services_sharp, "ECE")

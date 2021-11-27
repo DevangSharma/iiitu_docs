@@ -1,13 +1,10 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:iiitu_docs/pdfView.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class YearTile extends StatelessWidget {
-  String heading;
-  String title;
-  int id;
-  String path;
+  final String heading, title, path;
+  final int id;
 
   YearTile(this.id, this.title, this.path, this.heading);
 
@@ -31,18 +28,15 @@ class YearTile extends StatelessWidget {
           },
           leading: Text(
             "$id",
-            style:
-                TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           title: Text(
             title,
-            style:
-                TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           trailing: Icon(Icons.chevron_right_sharp),
         ),
       ),
     );
-    ;
   }
 }

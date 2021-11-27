@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class PDFView extends StatefulWidget {
-  String heading, url;
+  final String heading, url;
 
   PDFView(
     this.heading,
