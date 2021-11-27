@@ -28,8 +28,6 @@ class YearTile extends StatelessWidget {
 
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => PDFView(heading + " " + title, url)));
-
-            SfPdfViewer.network(url);
           },
           leading: Text(
             "$id",
