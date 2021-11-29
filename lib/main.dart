@@ -28,8 +28,8 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            "IIITU Docs",
-            style: TextStyle(fontSize: 24),
+            "IIITU Archives",
+            style: TextStyle(fontSize: 22),
           ),
           centerTitle: true,
         ),
